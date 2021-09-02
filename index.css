@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Montserrat', sans-serif;
+}
+.container{
+    width: 100%;
+    height: 90vh;
+    background-color: rgb(67, 67, 233);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    
+}
+.clock-box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 600px;
+    width: 50%;
+    height: 50%;
+    background-color: rgb(7, 2, 32);
+    color: aqua;
+    font-size: 5.5rem;
+    border-radius: 10px;
+}
+.btn-box{
+    position: absolute;
+    top: 10%;
+    left: 10%;
+}
+
+#btn{
+    width: 150px;
+    height: 40px;
+    background-color: rgb(7, 2, 32);
+    display: block;
+    color: aqua;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 10px;
+    z-index: 1000;
+}
+
+
+#btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 1rem 2rem rgba(7, 2, 32,.2);
+}
+
+#btn:active{
+    outline: none;
+    transform: translateY(-1px) scale(.98);
+    box-shadow: 0 .5rem 1rem rgba(7, 2, 32,.2);
+}
+
+footer{
+    display: flex;
+    width: 100%;
+    height: 10vh;
+    background-color: rgb(7, 2, 32);
+    justify-content: center;
+    align-items: center;
+}
+
+footer .footer{
+    color: aqua;
+}
+
+
+@media only screen and (max-width: 600px) {
+    .clock-box{
+        width: 50%;
+        min-width: 330px;
+        height: 170px;
+        font-size: 3rem;
+        padding: 10px;
+    }
+}
+@media only screen and (max-width: 500px) {
+    .clock-box{
+        width: 50%;
+        min-width: 300px;
+        height: 150px;
+        font-size: 2.5rem;
+        padding: 10px;
+    }
+}
