@@ -36,7 +36,26 @@ body{
     left: 10%;
 }
 
-#btn{
+.btn-box:nth-child(2){
+    top: 10%;
+    left: 30%;
+}
+
+@media only screen and (max-width: 860px) {
+    .btn-box:nth-child(2){
+        top: 10%;
+        left: 40%;
+    }
+}
+
+@media only screen and (max-width: 530px) {
+    .btn-box:nth-child(2){
+        top: 10%;
+        left: 50%;
+    }
+}
+
+.btn{
     width: 150px;
     height: 40px;
     background-color: rgb(7, 2, 32);
@@ -49,12 +68,12 @@ body{
 }
 
 
-#btn:hover {
+.btn:hover {
     transform: translateY(-3px);
     box-shadow: 0 1rem 2rem rgba(7, 2, 32,.2);
 }
 
-#btn:active{
+.btn:active{
     outline: none;
     transform: translateY(-1px) scale(.98);
     box-shadow: 0 .5rem 1rem rgba(7, 2, 32,.2);

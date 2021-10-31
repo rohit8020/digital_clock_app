@@ -1,9 +1,25 @@
 let time=document.getElementById("time")
-let btn=document.getElementById("btn")
+let btn=document.getElementById("time-format")
+let btn_fullScreen=document.getElementById("go-fulscreen")
+let elem=document.getElementById("clock-box")
+
 let _24hr=false
 
 let toggleFunc=(toggleVar)=>{
     _24hr=!toggleVar
+}
+
+btn_fullScreen.addEventListener("click",()=>{return openFullscreen()});
+
+
+function openFullscreen() {
+    if (elem.requestFullscreen) {
+      elem.requestFullscreen();
+    } else if (elem.webkitRequestFullscreen) { /* Safari */
+      elem.webkitRequestFullscreen();
+    } else if (elem.msRequestFullscreen) { /* IE11 */
+      elem.msRequestFullscreen();
+    }
 }
 
 let timeFunc=() => {
@@ -19,6 +35,7 @@ let timeFunc=() => {
         time.innerHTML=temp
     }else{
         if(hr==="12"){
+            timeStr=timeStr.split(":").join(" : ")
             time.innerHTML=timeStr+" PM"
         }else if(hr>"12"){
             hr=Number(hr)-12
@@ -26,9 +43,9 @@ let timeFunc=() => {
                 hr="0" + hr.toString()
             }
             
-            time.innerHTML=hr+":"+HrMnSc[1]+":"+HrMnSc[2]+" PM"
+            time.innerHTML=hr+" : "+HrMnSc[1]+" : "+HrMnSc[2]+" PM"
         }else if(hr==="00"){
-            time.innerHTML="12"+":"+HrMnSc[1]+":"+HrMnSc[2]+" AM"
+            time.innerHTML="12"+" : "+HrMnSc[1]+" : "+HrMnSc[2]+" AM"
         }else{
             time.innerHTML=timeStr+" AM"
         }
